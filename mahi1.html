@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDABIP - Users Dashboard</title>
+
+    <link rel="stylesheet" href="demo.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">〽</span>
+            <span>EDABIP</span>
+        </div>
+
+        <nav class="menu">
+
+            <a href="#">
+                <span class="menu-icon">▦</span>
+                Dashboard
+            </a>
+
+            <a href="#">
+                <span class="menu-icon">▥</span>
+                Power BI
+            </a>
+
+            <a href="#">
+                <span class="menu-icon">☼</span>
+                Tableau
+            </a>
+
+            <a href="#">
+                <span class="menu-icon">◷</span>
+                Analytics
+            </a>
+
+            <a href="#">
+                <span class="menu-icon">▤</span>
+                Report
+            </a>
+
+            <a href="#">
+                <span class="menu-icon">▭</span>
+                Billing
+            </a>
+
+            <a href="#" class="active">
+                <span class="menu-icon">♙</span>
+                Users
+            </a>
+
+            <a href="#">
+                <span class="menu-icon">⚙</span>
+                Settings
+            </a>
+
+            <a href="#">
+                <span class="menu-icon">↪</span>
+                Logout
+            </a>
+
+        </nav>
+
+        <!-- AI Assistant -->
+        <div class="ai-box">
+            <div class="ai-title">
+                <div class="robot"></div>
+
+                <div>
+                    <strong>AI Assistant</strong>
+                    <small>Your intelligent companion</small>
+                </div>
+            </div>
+
+            <button>Ask AI</button>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <!-- Top Header -->
+        <header class="topbar">
+
+            <div class="search-top">
+                <span>⌕</span>
+                <input id="mainSearch" type="text" placeholder="Search">
+                <span>×</span>
+            </div>
+
+            <div class="top-icons">
+                <span>♧</span>
+                <div class="profile">S</div>
+            </div>
+
+        </header>
+
+
+        <!-- Page Header -->
+        <section class="page-header">
+
+            <div>
+                <div class="page-title">
+                    <h1>Users</h1>
+                </div>
+
+                <div class="welcome">
+                    <h2>
+                        Welcome Back, Mahesh Dasari!
+                        <span class="realtime">• Real Time</span>
+                    </h2>
+
+                    <p>
+                        Stay Organised with real time insight, Monitor Your Business Performance and key Metrics.
+                    </p>
+                </div>
+            </div>
+
+            <div class="page-actions">
+                <span class="refresh-time">◷ Last Refreshed: 2h ago</span>
+
+                <button class="export">⇧ Export</button>
+
+                <div class="filters">
+                    <button>▣ Last 30 Days</button>
+                    <button>All Categories⌄</button>
+                    <button class="refresh">⟳ Refresh</button>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= STAT CARDS ================= -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">▥</div>
+                <div class="stat-content">
+                    <h3>Total Users</h3>
+                    <strong id="totalUserCount">120</strong>
+                    <small>Registered accounts</small>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">⌁</div>
+                <div class="stat-content">
+                    <h3>Active Users</h3>
+                    <strong id="activeUserCount">0</strong>
+                    <small>Currently active</small>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">◉</div>
+                <div class="stat-content">
+                    <h3>Inactive Users</h3>
+                    <strong id="inactiveUserCount">0</strong>
+                    <small>Not recently active</small>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">♙</div>
+                <div class="stat-content">
+                    <h3>New This Month</h3>
+                    <strong>14</strong>
+                    <small>Joined this month</small>
+                </div>
+            </div>
+
+        </section>
+<!-- ================= USER LIST ================= -->
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>User List</h2>
+
+                <div class="panel-actions">
+                    <div class="table-search">
+                        <span>⌕</span>
+                        <input id="userTableSearch" type="text" placeholder="Search">
+                        <span>×</span>
+                    </div>
+
+                    <button class="delete">▣ Delete</button>
+                    <button class="add" id="addUserButton" type="button">＋ Add User</button>
+                </div>
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table id="userTable">
+
+                    <thead>
+                        <tr>
+                            <th class="check"><input type="checkbox"></th>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><input type="checkbox" checked></td>
+                            <td>USR001</td>
+                            <td>Aarav Sharma</td>
+                            <td>aarav.sharma@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>USR002</td>
+                            <td>Ananya Patel</td>
+                            <td>ananya.patel@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>USR003</td>
+                            <td>Rohan Mehta</td>
+                            <td>rohan.mehta@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>USR004</td>
+                            <td>Priya Nair</td>
+                            <td>priya.nair@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>USR005</td>
+                            <td>Vikram Singh</td>
+                            <td>vikram.singh@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>USR006</td>
+                            <td>Meera Iyer</td>
+                            <td>meera.iyer@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>USR007</td>
+                            <td>Arjun Reddy</td>
+                            <td>arjun.reddy@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>USR008</td>
+                            <td>Kavya Menon</td>
+                            <td>kavya.menon@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>USR009</td>
+                            <td>Aditya Gupta</td>
+                            <td>aditya.gupta@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status inactive-status">Inactive</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>USR010</td>
+                            <td>Neha Joshi</td>
+                            <td>neha.joshi@stackly.com</td>
+                            <td>User</td>
+                            <td><span class="status inactive-status">Inactive</span></td>
+                            <td>✎</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="pagination">
+                <span>Showing 1 to 10 of 132 users</span>
+
+                <div>
+                    <button>‹ Back</button>
+                    <button>1</button>
+                    <button class="selected">2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>Next ›</button>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= ROLE MANAGEMENT ================= -->
+        <section class="panel roles-panel">
+
+            <div class="panel-header">
+                <h2>Role Management</h2>
+
+                <div class="panel-actions">
+                    <div class="table-search">
+                        <span>⌕</span>
+                        <input id="roleTableSearch" type="text" placeholder="Search">
+                        <span>×</span>
+                    </div>
+
+                    <button class="delete">▣ Delete</button>
+                    <button class="add" id="addRoleButton" type="button">＋ Add Role</button>
+                </div>
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table id="roleTable">
+
+                    <thead>
+                        <tr>
+                            <th class="check"><input type="checkbox"></th>
+                            <th>Role ID</th>
+                            <th>Role Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Permission</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><input type="checkbox" checked></td>
+                            <td>ROL001</td>
+                            <td>Administrator</td>
+                            <td>Full access to all modules and settings</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>All Modules</td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>ROL002</td>
+                            <td>Editor</td>
+                            <td>Can create and modify data,reports and dashboards</td>
+                            <td><span class="status inactive-status">Inactive</span></td>
+                            <td>Data ETL,Reports,Dashboards</td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>ROL003</td>
+                            <td>Viewer</td>
+                            <td>Can view data,reports and dashboards</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>Reports,Dashboards (View Only)</td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>ROL004</td>
+                            <td>Business Analyst</td>
+                            <td>Can view and analyze reports</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>Reports, Analytics</td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>ROL005</td>
+                            <td>Administrator</td>
+                            <td>Full access to all modules and settings</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>All Modules</td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>ROL006</td>
+                            <td>Editor</td>
+                            <td>Can create and modify data,reports and dashboards</td>
+                            <td><span class="status inactive-status">Inactive</span></td>
+                            <td>Data ETL,Reports,Dashboards</td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>ROL007</td>
+                            <td>Viewer</td>
+                            <td>Can view data,reports and dashboards</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>Reports,Dashboards (View Only)</td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>ROL008</td>
+                            <td>Business Analyst</td>
+                            <td>Can view and analyze reports</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>Reports, Analytics</td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>ROL009</td>
+                            <td>Administrator</td>
+                            <td>Full access to all modules and settings</td>
+                            <td><span class="status inactive-status">Inactive</span></td>
+                            <td>All Modules</td>
+                            <td>✎</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>ROL010</td>
+                            <td>Editor</td>
+                            <td>Can create and modify data,reports and dashboards</td>
+                            <td><span class="status active-status">Active</span></td>
+                            <td>Data ETL,Reports,Dashboards</td>
+                            <td>✎</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="pagination">
+                <span>Showing 1 to 10 of 10 roles</span>
+
+                <div>
+                    <button>‹ Back</button>
+                    <button>1</button>
+                    <button class="selected">2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>Next ›</button>
+                </div>
+            </div>
+
+        </section>
+
+        <dialog class="role-dialog" id="roleDialog" aria-labelledby="roleDialogTitle">
+            <form id="roleForm">
+                <h2 id="roleDialogTitle">Add Role</h2>
+
+                <label for="roleName">Role name</label>
+                <input id="roleName" name="roleName" required maxlength="60">
+
+                <label for="roleDescription">Description</label>
+                <textarea id="roleDescription" name="roleDescription" required maxlength="180" rows="3"></textarea>
+
+                <label for="roleStatus">Status</label>
+                <select id="roleStatus" name="roleStatus">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+
+                <label for="rolePermissions">Permissions</label>
+                <input id="rolePermissions" name="rolePermissions" required maxlength="100">
+
+                <div class="role-dialog-actions">
+                    <button type="button" id="cancelRoleButton">Cancel</button>
+                    <button class="add" type="submit">Save Role</button>
+                </div>
+            </form>
+        </dialog>
+
+        <dialog class="role-dialog" id="userDialog" aria-labelledby="userDialogTitle">
+            <form id="userForm">
+                <h2 id="userDialogTitle">Add User</h2>
+
+                <label for="userName">Full name</label>
+                <input id="userName" name="userName" required maxlength="80" autocomplete="name">
+
+                <label for="userEmail">Email address</label>
+                <input id="userEmail" name="userEmail" type="email" required maxlength="120" autocomplete="email">
+
+                <label for="userRole">Role</label>
+                <select id="userRole" name="userRole" required>
+                    <option>User</option>
+                    <option>Administrator</option>
+                    <option>Editor</option>
+                    <option>Viewer</option>
+                    <option>Business Analyst</option>
+                </select>
+
+                <label for="userStatus">Status</label>
+                <select id="userStatus" name="userStatus" required>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+
+                <div class="role-dialog-actions">
+                    <button type="button" id="cancelUserButton">Cancel</button>
+                    <button class="add" type="submit">Save User</button>
+                </div>
+            </form>
+        </dialog>
+
+
+        <!-- ================= FOOTER ================= -->
+        <footer>
+            <span>© 2026 EDABIP. All rights reserved. Enterprise Data Analytics & Business Intelligence Platform</span>
+
+            <span>
+                Privacy Policy · Terms · Help & Support &nbsp; v2.1.0
+            </span>
+        </footer>
+
+    </main>
+
+
+    <!-- Floating AI button -->
+    <div class="floating-ai">
+        〽
+    </div>
+
+</div>
+
+<script src="mahi1.js"></script>
+</body>
+</html>
+
+
+        
